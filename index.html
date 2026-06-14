@@ -1,0 +1,481 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechNova — Redefine What's Possible</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ─── NAV ─────────────────────────────────────────────── -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <a href="#hero" class="nav-logo">
+      <span class="dot" aria-hidden="true"></span>
+      TechNova
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#testimonials">Clients</a></li>
+      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+
+    <div class="hamburger" id="hamburger" aria-label="Toggle menu" role="button" tabindex="0" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#services" onclick="closeMobile()">Services</a>
+    <a href="#process" onclick="closeMobile()">How It Works</a>
+    <a href="#testimonials" onclick="closeMobile()">Clients</a>
+    <a href="#contact" onclick="closeMobile()">Get in Touch</a>
+  </div>
+
+  <!-- ─── HERO ─────────────────────────────────────────────── -->
+  <section id="hero">
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Now Powering 200+ Enterprises Across Pakistan
+      </div>
+
+      <h1>
+        Build the Future<br/>
+        with <span class="gradient-text" id="typewriter"></span>
+      </h1>
+
+      <p class="hero-sub">
+        TechNova delivers cutting-edge AI infrastructure, cloud architecture, and digital transformation solutions engineered for scale — built for teams that refuse to settle.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          Start Your Project <span class="btn-arrow">→</span>
+        </a>
+        <a href="#about" class="btn-secondary">
+          Discover TechNova
+        </a>
+      </div>
+
+      <div class="hero-stats" role="list">
+        <div class="stat-item" role="listitem">
+          <div class="stat-num" data-target="500">0</div>
+          <div class="stat-label">Enterprise Clients</div>
+        </div>
+        <div class="stat-item" role="listitem">
+          <div class="stat-num" data-target="99.9" data-decimal="1">0</div>
+          <div class="stat-label">Uptime SLA</div>
+        </div>
+        <div class="stat-item" role="listitem">
+          <div class="stat-num" data-target="8">0</div>
+          <div class="stat-label">Years of Innovation</div>
+        </div>
+        <div class="stat-item" role="listitem">
+          <div class="stat-num" data-target="40">0</div>
+          <div class="stat-label">Countries Served</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─────────────────────────────────────────────── -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="hex-container">
+          <!-- Animated SVG hex grid -->
+          <svg class="hex-grid-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="cg" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.8"/>
+                <stop offset="100%" stop-color="#7B2FFF" stop-opacity="0.1"/>
+              </radialGradient>
+              <filter id="glow-f">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <!-- Central orb -->
+            <circle cx="200" cy="200" r="60" fill="url(#cg)" opacity="0.6">
+              <animate attributeName="r" values="60;68;60" dur="3s" repeatCount="indefinite"/>
+              <animate attributeName="opacity" values="0.6;0.85;0.6" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="200" cy="200" r="45" fill="none" stroke="#00E5FF" stroke-width="1" opacity="0.5">
+              <animate attributeName="r" values="45;52;45" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Hexagonal rings -->
+            <g stroke="#00E5FF" stroke-width="0.7" fill="none" opacity="0.35">
+              <polygon points="200,110 252,140 252,200 200,230 148,200 148,140"/>
+            </g>
+            <g stroke="#7B2FFF" stroke-width="0.5" fill="none" opacity="0.25">
+              <polygon points="200,60 275,102 275,190 200,232 125,190 125,102"/>
+            </g>
+            <g stroke="#00E5FF" stroke-width="0.4" fill="none" opacity="0.15">
+              <polygon points="200,20 300,75 300,185 200,240 100,185 100,75"/>
+            </g>
+            <!-- Orbiting dots -->
+            <circle r="5" fill="#00E5FF" filter="url(#glow-f)">
+              <animateMotion dur="5s" repeatCount="indefinite">
+                <mpath href="#orbit1"/>
+              </animateMotion>
+            </circle>
+            <circle r="3.5" fill="#A855F7" filter="url(#glow-f)">
+              <animateMotion dur="7s" repeatCount="indefinite">
+                <mpath href="#orbit2"/>
+              </animateMotion>
+            </circle>
+            <circle r="3" fill="#00E5FF" filter="url(#glow-f)" opacity="0.7">
+              <animateMotion dur="9s" repeatCount="indefinite" begin="-3s">
+                <mpath href="#orbit3"/>
+              </animateMotion>
+            </circle>
+            <path id="orbit1" d="M 200 140 A 60 60 0 1 1 199.99 140" fill="none"/>
+            <path id="orbit2" d="M 200 102 A 98 98 0 1 0 199.99 102" fill="none"/>
+            <path id="orbit3" d="M 200 75 A 125 125 0 1 1 199.99 75" fill="none"/>
+            <!-- Grid lines -->
+            <line x1="200" y1="0" x2="200" y2="400" stroke="#00E5FF" stroke-width="0.3" opacity="0.1"/>
+            <line x1="0" y1="200" x2="400" y2="200" stroke="#00E5FF" stroke-width="0.3" opacity="0.1"/>
+            <line x1="0" y1="0" x2="400" y2="400" stroke="#7B2FFF" stroke-width="0.3" opacity="0.08"/>
+            <line x1="400" y1="0" x2="0" y2="400" stroke="#7B2FFF" stroke-width="0.3" opacity="0.08"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <span class="section-eyebrow">Who We Are</span>
+        <h2 id="about-heading">We Engineer<br/>Tomorrow's Systems</h2>
+        <p class="section-lead">
+          Founded in 2016, TechNova has been at the frontier of AI-powered infrastructure and enterprise software. We don't just build technology — we architect ecosystems that evolve with your ambition.
+        </p>
+
+        <ul class="feature-list" role="list">
+          <li role="listitem">
+            <div class="feature-icon">⚡</div>
+            <span><strong>Performance-First Architecture</strong> — Systems designed to handle millions of concurrent operations with sub-10ms latency guarantees.</span>
+          </li>
+          <li role="listitem">
+            <div class="feature-icon">🛡️</div>
+            <span><strong>Security by Design</strong> — SOC 2 Type II certified infrastructure with zero-trust networking and end-to-end encryption.</span>
+          </li>
+          <li role="listitem">
+            <div class="feature-icon">🧠</div>
+            <span><strong>AI-Native Platform</strong> — Machine learning baked into every layer, from predictive scaling to intelligent observability.</span>
+          </li>
+          <li role="listitem">
+            <div class="feature-icon">🌐</div>
+            <span><strong>Global Edge Network</strong> — 40 points of presence across 6 continents, delivering consistent experience worldwide.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SERVICES ──────────────────────────────────────────── -->
+  <section id="services" aria-labelledby="services-heading">
+    <div class="services-header">
+      <div>
+        <span class="section-eyebrow">What We Build</span>
+        <h2 id="services-heading">End-to-End Tech Solutions</h2>
+      </div>
+      <p class="section-lead" style="max-width:340px;">
+        Every engagement starts with your challenge. We design, build, and operate the systems that move you forward.
+      </p>
+    </div>
+
+    <div class="cards-grid">
+
+      <div class="service-card">
+        <div class="card-icon" style="background:rgba(0,229,255,0.12);">🤖</div>
+        <div class="card-title">AI & Machine Learning</div>
+        <p class="card-desc">Custom model training, MLOps pipelines, and intelligent automation — deployed at enterprise scale with full observability.</p>
+        <span class="card-tag" style="background:rgba(0,229,255,0.1);color:var(--cyan);">Core Offering</span>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon" style="background:rgba(123,47,255,0.12);">☁️</div>
+        <div class="card-title">Cloud Architecture</div>
+        <p class="card-desc">Multi-cloud and hybrid infrastructure designed for resilience. We handle AWS, GCP, and Azure migrations with zero-downtime strategies.</p>
+        <span class="card-tag" style="background:rgba(123,47,255,0.1);color:var(--mid);">Infrastructure</span>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon" style="background:rgba(0,229,255,0.12);">🔒</div>
+        <div class="card-title">Cybersecurity</div>
+        <p class="card-desc">Penetration testing, threat modeling, and 24/7 SOC monitoring. We protect your stack from the outside in and from the inside out.</p>
+        <span class="card-tag" style="background:rgba(0,229,255,0.1);color:var(--cyan);">Security</span>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon" style="background:rgba(168,85,247,0.12);">📱</div>
+        <div class="card-title">Product Engineering</div>
+        <p class="card-desc">From concept to launch: full-stack web and mobile development with a focus on performance, accessibility, and elegant UX.</p>
+        <span class="card-tag" style="background:rgba(168,85,247,0.1);color:#A855F7;">Development</span>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon" style="background:rgba(0,229,255,0.12);">📊</div>
+        <div class="card-title">Data & Analytics</div>
+        <p class="card-desc">Real-time data pipelines, warehouse modernization, and BI platforms that turn raw signals into strategic clarity.</p>
+        <span class="card-tag" style="background:rgba(0,229,255,0.1);color:var(--cyan);">Data</span>
+      </div>
+
+      <div class="service-card">
+        <div class="card-icon" style="background:rgba(123,47,255,0.12);">⚙️</div>
+        <div class="card-title">DevOps & Platform</div>
+        <p class="card-desc">CI/CD, Kubernetes orchestration, and developer experience tooling — so your team ships fast without sacrificing stability.</p>
+        <span class="card-tag" style="background:rgba(123,47,255,0.1);color:var(--mid);">Platform</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── PROCESS ───────────────────────────────────────────── -->
+  <section id="process" aria-labelledby="process-heading">
+    <div class="process-inner">
+      <div class="process-header">
+        <span class="section-eyebrow">How We Work</span>
+        <h2 id="process-heading">From Brief to Breakthrough</h2>
+        <p class="section-lead" style="margin: 0.8rem auto 0; text-align:center;">
+          A disciplined process that eliminates ambiguity and accelerates delivery — without sacrificing quality.
+        </p>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">01</div>
+          <div class="step-title">Discovery Sprint</div>
+          <p class="step-desc">We immerse in your domain, map your constraints, and define success criteria with precision before writing a single line of code.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">02</div>
+          <div class="step-title">Architecture Design</div>
+          <p class="step-desc">System blueprints reviewed with your team. We present tradeoffs openly and align on the design that fits your 5-year horizon.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">03</div>
+          <div class="step-title">Iterative Build</div>
+          <p class="step-desc">Two-week sprints with continuous delivery. You have visibility every step of the way — no black-box development, ever.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">04</div>
+          <div class="step-title">Launch & Scale</div>
+          <p class="step-desc">Zero-downtime deployments, runbook documentation, and a 90-day hyper-care period to ensure your system performs under real load.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── TESTIMONIALS ─────────────────────────────────────── -->
+  <section id="testimonials" aria-labelledby="testimonials-heading">
+    <div class="testimonials-header">
+      <span class="section-eyebrow">Client Stories</span>
+      <h2 id="testimonials-heading">Trusted by Teams That Ship</h2>
+      <p class="section-lead">Don't take our word for it — here's what engineering leaders at our partner companies have to say.</p>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"TechNova rebuilt our entire data platform in 14 weeks. The new pipeline handles 10× the volume with half the operational overhead. Their team was a genuine extension of ours."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background:linear-gradient(135deg,#00E5FF,#7B2FFF);">SK</div>
+          <div>
+            <div class="reviewer-name">Ayesha Siddiqui</div>
+            <div class="reviewer-role">VP Engineering, Easypasia</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"We evaluated five vendors. TechNova was the only team that challenged our assumptions before agreeing to scope. That intellectual honesty is why we partnered with them."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background:linear-gradient(135deg,#A855F7,#00E5FF);">MR</div>
+          <div>
+            <div class="reviewer-name">Bilal Chaudhry</div>
+            <div class="reviewer-role">CTO, Daraz Pakistan</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"The ML-powered fraud detection system TechNova built cut our false-positive rate by 73%. It's been running in production for two years — rock solid, zero critical incidents."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar" style="background:linear-gradient(135deg,#7B2FFF,#A855F7);">AL</div>
+          <div>
+            <div class="reviewer-name">Usman Tariq</div>
+            <div class="reviewer-role"> Head of Product, Jazz Digital</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ───────────────────────────────────────────── -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="contact-inner">
+
+      <div class="contact-info">
+        <span class="section-eyebrow">Get In Touch</span>
+        <h2 id="contact-heading">Let's Build Something Extraordinary</h2>
+        <p class="section-lead">
+          Whether you're scaling an existing system, launching a new product, or rethinking your entire infrastructure — we want to hear about it.
+        </p>
+
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <span>Plot 23, Clifton Block 5 — Karachi, Pakistan & Lahore Tech Hub</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <span>hello@technova.io</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <span>+92 21 111 868 662  &nbsp;|&nbsp; +92 42 111 868 662</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🕐</div>
+            <span>Mon – Fri, 9 AM – 6 PM (PKT)</span>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <!-- Success state -->
+        <div class="form-success" id="form-success" role="alert" aria-live="polite">
+          ✅ &nbsp; Message sent! We'll be in touch within one business day.
+        </div>
+
+        <!-- Contact form -->
+        <form class="contact-form" id="contact-form" novalidate aria-label="Contact form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" placeholder="Alex" autocomplete="given-name" />
+              <span class="form-error" id="fname-error" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" placeholder="Morgan" autocomplete="family-name" />
+              <span class="form-error" id="lname-error" role="alert"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="alex@company.com" autocomplete="email" />
+            <span class="form-error" id="email-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" placeholder="Your Company" autocomplete="organization" />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Service Interest</label>
+            <select id="service">
+              <option value="">Select a service…</option>
+              <option>AI & Machine Learning</option>
+              <option>Cloud Architecture</option>
+              <option>Cybersecurity</option>
+              <option>Product Engineering</option>
+              <option>Data & Analytics</option>
+              <option>DevOps & Platform</option>
+              <option>Something else</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell Us About Your Project</label>
+            <textarea id="message" placeholder="Briefly describe your challenge, timeline, and scale…"></textarea>
+            <span class="form-error" id="message-error" role="alert"></span>
+          </div>
+
+          <button type="submit" class="submit-btn" id="submit-btn">
+            Send Message →
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo" style="font-size:1.2rem;">
+          <span class="dot"></span> TechNova
+        </a>
+        <p>Redefining what enterprise technology can be — since 2016. Built for scale, designed for people.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#process">Our Process</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press Kit</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">AI & ML</a></li>
+          <li><a href="#services">Cloud</a></li>
+          <li><a href="#services">Cybersecurity</a></li>
+          <li><a href="#services">Product Engineering</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Cookie Preferences</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy"> © 2026 TechNova Pakistan (Pvt) Ltd. All rights reserved.&nbsp;·&nbsp; </p>
+      <div class="social-links" aria-label="Social media links">
+        <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
+        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        <a href="#" class="social-link" aria-label="GitHub">⌥</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
